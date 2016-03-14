@@ -5,6 +5,7 @@ var sourcemaps   = require('gulp-sourcemaps');
 var stylus       = require('gulp-stylus');
 var swiss        = require('kouto-swiss');
 var autoprefixer = require('gulp-autoprefixer');
+var plumber      = require('gulp-plumber');
 
 var paths = {
     srcDir: 'src',
@@ -16,6 +17,7 @@ gulp.task('stylus', function () {
     var distGlob = paths.distDir + '/css';
 
     gulp.src(srcGlob)
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(stylus({
             compress: true,
