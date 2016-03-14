@@ -30,9 +30,10 @@ gulp.task('js-bundle', function () {
         entries: srcGlob,
         debug: isProduction
     })
-        .transform(babelify)
+        .transform(babelify, {presets: ['es2015']})
         .plugin(licensify)
         .bundle()
+        .on('error', err => console.log('Error : ' + err.message))
         .pipe(source('app.js'))
         .pipe(buffer())
         .pipe(uglify({
