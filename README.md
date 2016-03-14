@@ -13,3 +13,16 @@ npm install
 npm run
 gulp
 ```
+
+### tasks
+```
+gulp build
+gulp watch
+gulp serve
+gulp clean
+```
+
+### production
+```
+gulp --env production
+```
