@@ -1,13 +1,27 @@
 <!doctype html>
 <html lang="ja" prefix="og: http://ogp.me/ns#">
 <% var data = siteSettings;
-       htmlname = filename.split('/').splice(-1)[0].replace('ejs', 'html');
+   var htmlname = filename.split('/').splice(-1)[0].replace('ejs', 'html');
 %>
-<% include _header %>
+<head>
+  <meta charset="UTF-8">
+  <title><%= data.sitename %></title>
+
+  <meta name="title" content="<%= data.sitename %>">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="<%= data.domain+htmlname %>">
+
+  <%- include('_ogp', {data: data} ); %>
+  <%- include('_twitter', {data: data} ); %>
+
+  <% include _css %>
+</head>
 <body>
     <div class="container">
         <h1>Start</h1>
     </div>
-<% include _footer %>
+<% include _scripts %>
 </body>
 </html>
