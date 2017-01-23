@@ -1,26 +1,31 @@
 <!doctype html>
 <html lang="ja" prefix="og: http://ogp.me/ns#">
-<% var data = siteSettings;
-   var htmlname = filename.split('/').splice(-1)[0].replace('ejs', 'html');
-%>
 <head>
   <meta charset="UTF-8">
-  <title><%= data.sitename %></title>
+  <title><%= sitename %></title>
 
-  <meta name="title" content="<%= data.sitename %>">
+  <meta name="title" content="<%= sitename %>">
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="<%= data.domain+htmlname %>">
+  <link rel="canonical" href="<%= domain %>">
+  <meta property="og:title" content="<%= sitename %>" />
+  <meta property="og:description" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<%= domain %>" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="">
 
-  <%- include('_ogp', {data: data} ); %>
-  <%- include('_twitter', {data: data} ); %>
-
-  <% include _css %>
+<% include _css %>
 </head>
 <body>
+
+<% var items = ['item1', 'item2', 'item3']; %>
     <div class="container">
         <h1>Start</h1>
+        <% for (var item of items) { %>
+          <p><%= item %></p>
+        <% } %>
     </div>
 <% include _scripts %>
 </body>

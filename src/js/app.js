@@ -1,6 +1,8 @@
-// var $ = require('jquery');
-// var _ = require('lodash');
+// let $ = require('jquery');
+// let _ = require('lodash');
+// let ex = require('./example.js');
 
-$(document).ready(function() {
-    // ....
-});
+// $(document).ready(function() {
+//     // ....
+// });
+console.debug('Hello world');

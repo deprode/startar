@@ -7,4 +7,4 @@
 //         console.log(this.msg.test);
 //     }
 // };
-// 使うときは、`let ex = require('example.js');`
+// 使うときは、`let ex = require('./example.js');`
